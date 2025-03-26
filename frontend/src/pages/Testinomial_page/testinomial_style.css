@@ -1,0 +1,43 @@
+.testinonmial_section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  gap: 10px;
+}
+.image_container_of_testinomial_page {
+  width: 60%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.image_container_of_testinomial_page img {
+  max-width: 100%;
+  height: auto;
+}
+.video_page {
+  border: none;
+  height: 600px;
+}
+.image_container_of_testinomial_page video {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 768px) {
+  .video_page {
+    border: none;
+    height: 300px;
+  }
+  .image_container_of_testinomial_page {
+    width: 90%;
+    border-radius: 5px;
+  }
+
+  .image_container_of_testinomial_page img {
+    max-width: 100%;
+    height: auto;
+  }
+}

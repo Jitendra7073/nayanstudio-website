@@ -1,0 +1,39 @@
+/* Page Details Section */
+.Page_details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.Page_details_p {
+  line-height: 1.2; /* Consistent line-height */
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: 200;
+  color: #575757;
+}
+
+.Images_gallery_outer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.Images_gallery_outer .Images_gallery {
+  width: 1000px;
+}
+.Images_gallery .gallery_image_div {
+  height: 100%;
+  width: 100%;
+}
+.Images_gallery .gallery_image_div img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 1200px) {
+  .Images_gallery_outer .Images_gallery {
+    width: 100%;
+    padding: 0 10px;
+  }
+}

@@ -1,0 +1,15 @@
+.Gallery_Full_view{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 0 0;
+}
+.Gallery_Full_view .inner_view{
+    width: 1200px;
+}
+@media screen and (max-width:1200px) {
+    .Gallery_Full_view .inner_view{
+        width: 100%;
+    }
+}

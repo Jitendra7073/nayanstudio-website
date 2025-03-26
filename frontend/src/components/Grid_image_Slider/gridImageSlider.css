@@ -1,0 +1,97 @@
+/* Slider Container */
+.grid-images-slider {
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Optional: Limit max width for better visuals */
+  margin: 20px auto; /* Center the slider */
+  overflow: hidden; /* Hide overflow to prevent images from spilling out */
+  position: relative;
+  border-radius: 8px; /* Add rounded corners */
+  height: auto;
+}
+
+/* Individual Slide Items */
+.slider-item {
+  padding: 10px 0; /* Space around the images */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent image overflow */
+  position: relative; /* Ensures the image is contained */
+}
+
+.slider-item img {
+  width: 100%; /* Ensure the image takes up the full width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition for fade effect */
+}
+
+/* Navigation Arrows */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: #fff; /* White arrow */
+  font-size: 24px;
+  height: 50px;
+  width: 30px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.custom-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+/* Left Arrow */
+.custom-arrow.prev {
+  left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* Right Arrow */
+.custom-arrow.next {
+  right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.next-previous-arrows {
+  font-size: 25px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-images-slider {
+    margin: 10px auto;
+  }
+
+  .slider-item {
+    padding: 5px 0;
+  }
+
+  .custom-arrow {
+    font-size: 18px;
+    height: 35px;
+    width: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-arrow {
+    font-size: 16px;
+    height: 30px;
+    width: 30px;
+  }
+
+  .slider-item {
+    padding: 2px 0;
+  }
+}

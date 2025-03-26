@@ -1,0 +1,100 @@
+@import "../../../../assets/css/Font.css";
+
+:root {
+  /* font-family */
+  --Font-Playfair: "Playfair Display", serif;
+  --Font-Poppins: "Poppins", serif;
+  --Font-Oswald: "Oswald", serif;
+  --Font-Noto: "Noto Serif JP", serif;
+  --Font-Montserrat: "Montserrat", serif;
+
+  /* colors */
+  --Heading-color: #222222;
+  --subtext-color: #b3b3b3;
+  --text-color: #575757;
+}
+.spacing {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Stories_design_container {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 10px 0 50px 0;
+}
+
+.Stories_design_header img {
+  max-width: 100%; 
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  display: block;
+}
+/* content design */
+
+.Stories_design_content {
+  font-family: var(--Font-Noto);
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.Stories_design_content .Stories_design_title a {
+  font-size: 30px;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--Heading-color);
+}
+.Stories_design_content .Stories_design_date {
+  color: var(--subtext-color);
+}
+.Stories_design_content .Stories_design_divider {
+ 
+  font-size: 15px;
+  color: var(--text-color);
+  font-weight: 200;
+  text-align: justify;
+  width: 950px;
+  padding: 5px 0 5px 0;
+  word-wrap: break-word;
+}
+.read_more_Stories a {
+  text-decoration: none;
+  color: var(--Heading-color);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.read_more_Stories a:hover {
+  color: var(--text-color);
+}
+/* responsive design  */
+@media screen and (max-width: 1200px) {
+  .Stories_design_container {
+    padding: 0 15px;
+  }
+  .Stories_design_container {
+    margin: 10px 0 20px 0;
+  }
+  .Stories_design_content {
+    margin-bottom: 20px;
+  }
+  .Stories_design_content .Stories_design_divider {
+    width: 100%;
+    line-height: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Stories_design_content .Stories_design_title a {
+    font-size: 25px;
+  }
+  .Stories_design_content .Stories_design_divider {
+    font-size: 14px;
+  }
+  .Stories_design_container {
+    margin: 10px 0;
+  }
+  .Stories_design_content {
+    margin-bottom: 10px;
+  }
+}

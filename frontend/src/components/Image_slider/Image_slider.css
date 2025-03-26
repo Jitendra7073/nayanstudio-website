@@ -1,0 +1,36 @@
+.slider-container {
+  height: 600px;
+  overflow: hidden;
+  width: fit-content;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.slider-container .fade_out_slider {
+  width: 1200px;
+  height: auto;
+}
+
+.image_container_each {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.image_container_each img {
+  width: 100%;
+  height: auto;
+}
+@media screen and (max-width:1200px) {
+  .slider-container {
+    height: auto;
+    overflow: auto;
+    width: 100%;
+  }
+  .slider-container .fade_out_slider {
+    width: 100%;
+  }
+}

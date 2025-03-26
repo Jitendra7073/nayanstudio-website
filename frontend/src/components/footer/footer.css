@@ -1,0 +1,24 @@
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+}
+.footer .footer-text{
+  width: 1200px;
+  padding: 20px;
+}
+.footer p{
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #777;
+    margin: 0;
+}
+@media screen and (max-width:768px) {
+  .footer p{
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+}

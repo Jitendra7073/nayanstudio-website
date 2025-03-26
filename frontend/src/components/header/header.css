@@ -1,0 +1,171 @@
+/* google font Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+header {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+.UnderHeader {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px; /* Add padding for small screens */
+}
+/* top logo css start */
+.top-header-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+}
+.logoImg {
+  height: 100px;
+  width: 157px;
+}
+.logo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+
+/* logo css end */
+
+/* navbar css start */
+.navbar {
+  margin: 0 0 50px 0;
+}
+.menu-button{
+  display: none;
+  opacity: 0;
+}
+.navbar ul {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 13px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Wrap items on small screens */
+  width: 100%;
+  max-width: 1200px;
+  font-weight: 400;
+  gap: 15px; /* Add space between items */
+}
+.navbar ul li {
+  flex: 1 1 auto; /* Allow items to grow/shrink */
+  text-align: center;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 0;
+  display: inline-block;
+}
+.navbar ul li a:hover {
+  color: rgb(131, 131, 131);
+  cursor: pointer;
+}
+/* navbar css end */
+/* mobile view */
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.99);
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 999;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.Open_icon{
+  color: #222;
+  font-size: 30px;
+  padding: 0 10px 0 0;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: orange;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  color: white;
+  margin-top: 20px;
+  right: 20px;
+  font-size: 15px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .logoImg {
+    height: 80px;
+    width: 120px;
+  }
+  .navbar ul {
+    font-size: 12px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-header-section {
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .menu-button{
+    display: block;
+    opacity: 1;
+  }
+  .logoImg {
+    height: 60px;
+    width: 100px;
+  }
+  .navbar{
+    display: none;
+  }
+  .navbar ul {
+    font-size: 11px;
+    align-items: center;
+    gap: 10px;
+  }
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}

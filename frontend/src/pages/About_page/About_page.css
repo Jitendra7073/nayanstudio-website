@@ -1,0 +1,111 @@
+.About_view {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.center_About_View {
+  width: 1200px;
+}
+
+.About_container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.About_content {
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Add spacing between content */
+}
+
+.About_text_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.About_text_container .About_inner_content {
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.About_text_container .About_inner_content .About_heading {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+.About_text_container .About_inner_content p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  color: #575757;
+  letter-spacing: 0.8px;
+  margin-top: 10px;
+}
+
+
+.About_text_container .About_inner_content p strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.About_image_container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.About_image_container .About_image_container_img {
+  max-width: 100%;
+  height: auto;
+}
+
+.About_image_container .About_image_container_img img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1000px) {
+  .About_content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Ensure spacing between text and image */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .About_text_container .About_inner_content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .About_text_container .About_inner_content .About_description {
+    text-align: justify;
+  }
+}

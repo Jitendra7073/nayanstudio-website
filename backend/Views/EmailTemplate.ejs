@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Event Inquiry - Nayan Studio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #2b2e4a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 15px;
+        }
+        .header img {
+            max-width: 150px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 5px 0;
+        }
+        .header p {
+            font-size: 16px;
+            margin: 0;
+        }
+        .content {
+            padding: 20px 30px;
+            color: #333333;
+        }
+        .content h2 {
+            margin: 0 0 10px;
+            font-size: 22px;
+            color: #2b2e4a;
+        }
+        .content p {
+            margin: 10px 0;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .highlight {
+            background-color: #f0f4ff;
+            border-left: 4px solid #2b2e4a;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .footer {
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #888888;
+        }
+        .footer a {
+            color: #2b2e4a;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header Section -->
+        <div class="header">
+            <img src="https://st.hzcdn.com/simgs/c5c3f2e40dc2b1ac_3-0556/_.jpg" alt="Nayan Studio Logo">
+            <h1>New Event Inquiry</h1>
+            <p>Details of the user inquiry</p>
+        </div>
+        
+        <!-- Content Section -->
+        <div class="content">
+            <h2>Event Inquiry Details</h2>
+            <p><strong>From:</strong> <%= firstName %> <%= lastName %></p>
+            <p><strong>Email Address:</strong> <%= email %></p>
+            <p><strong>Subject:</strong> <%= subject %></p>
+            <div class="highlight">
+                <p><strong>Event Details:</strong></p>
+                <p><%= eventDetails %></p>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>&copy; 2024 Nayan Studio. All rights reserved.</p>
+            <p>
+                Need help? Contact us at 
+                <a href="mailto:support@nayanstudio.com">support@nayanstudio.com</a>.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

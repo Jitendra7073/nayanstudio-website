@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Serif+JP:wght@200..900&display=swap");
+
+.Inquiry {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh; 
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.Inquiry_view {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto; /* Centers the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.inquiry_inner_view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.inquiry_image img {
+  width: 788px;
+  height: 525px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  mix-blend-mode:darken;
+}
+.inquiry_content {
+  text-align: center;
+}
+
+.inquiry_content_p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 27px;
+  color: #575757;
+  letter-spacing: 1px;
+}
+.inquiry_content_email {
+    text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 1.2px;
+  line-height: 20px;
+  color: #222;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .inquiry_image img {
+    width: 100%; /* Makes the image take the full container width */
+    height: auto; /* Keeps aspect ratio intact */
+  }
+}
+
+@media (max-width: 480px) {
+  .Inquiry{
+    padding: 0 15px;
+  }
+  .inquiry_image img {
+    max-width: none; /* Remove max-width to ensure flexibility */
+    height: auto; /* Maintain aspect ratio */
+  }
+}

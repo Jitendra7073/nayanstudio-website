@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .background {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out; /* Smooth fade transition */
+    opacity: 1; /* Default visible */
+  }
+  
+  .background.fade {
+    opacity: 0.9; /* Fade out */
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  .Welcome-logo {
+    width: 130px;
+    margin-bottom: 30px;
+    background-color: #ee972b;
+    padding: 3px;
+    border-radius: 100px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .enter-button {
+    padding: 10px;
+    font-size: 18px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 130px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .enter-button:active {
+    background-color: orange;
+    color: black;
+  }
+  
+  /* Optional: Add an overlay to darken the background */
+  .background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 0; /* Behind the content */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .background {
+      height: 100vh;
+      background-size: fill;
+      background-position: center;
+    }
+    .Welcome-logo {
+      width:100px;
+      background-color: #ee972b;
+      padding: 3px;
+    }
+    .background::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+      z-index: 0; /* Behind the content */
+    }
+  }
+  

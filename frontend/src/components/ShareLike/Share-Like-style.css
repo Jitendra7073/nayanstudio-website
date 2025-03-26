@@ -1,0 +1,113 @@
+@import "../../assets/css/Font.css";
+
+:root {
+  /* font-family */
+  --Font-Playfair: "Playfair Display", serif;
+  --Font-Poppins: "Poppins", serif;
+  --Font-Oswald: "Oswald", serif;
+  --Font-Noto: "Noto Serif JP", serif;
+  --Font-Montserrat: "Montserrat", serif;
+
+  /* colors */
+  --Heading-color: #222222;
+  --subtext-color: #b3b3b3;
+  --text-color: #575757;
+}
+.post-functionality {
+  font-family: var(--Font-Noto);
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+}
+.post-functionality p {
+  color: var(--text-color);
+}
+.post-functionality p:hover {
+  color: var(--heading-color);
+  cursor: pointer;
+}
+.post-functionality .post-comment-share {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.post-functionality .post-comment-share .menu-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.post-functionality .post-comment-share .menu-container .dropdown-menu {
+  position: absolute;
+  top:45px;
+  left: 0;
+  transform: translateY(-20px);
+  opacity: 0;
+  z-index: 999;
+  width: fit-content;
+  display: flex;
+  padding: 5px;
+  background-color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease;
+  display: none;
+  border-radius: 5px;
+}
+
+.post-functionality .post-comment-share .menu-container:hover .dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.post-functionality .post-comment-share .menu-container .dropdown-menu button {
+    width: 130px;
+    padding: 10px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+}
+.post-functionality .post-comment-share .menu-container .dropdown-menu button .menu-icon-item{
+    padding-right: 7px;
+}
+
+.post-functionality
+  .post-comment-share
+  .menu-container
+  .dropdown-menu
+  button:hover {
+  background-color: #e0e0e0;
+}
+.post-functionality .like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+  width: 100px;
+}
+
+.post-functionality .like:hover .like-icon {
+  animation: liked 2s ease-in-out infinite;
+}
+@keyframes liked {
+  0% {
+    scale: 1.1;
+  }
+  50% {
+    scale: 1.3;
+  }
+  100% {
+    scale: 1.1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-functionality .like {
+    width: 150px;
+  }
+}
