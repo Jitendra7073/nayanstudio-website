@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Set allowed frontend URLs
-const BASE_URL = "https://nayan-studio.onrender.com";
+const BASE_URL = "https://nayan-studio.onrender.com/";
 
 // Middleware
 app.use(express.json());

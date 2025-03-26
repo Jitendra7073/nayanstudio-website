@@ -1,12 +1,12 @@
 import React from "react";
 import StoriesPost from "../../Components/Story_design";
-import { PriyajRushali } from "../../../../assets/images/Stories_page";
 import "../pages_comman.css";
 import storiesData from "../data.json";
-// import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css"; // Include blur effect styles
 
 const Page8 = () => {
+  const PriyajRushali =
+    "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998030/poster_6_npu2xc.jpg";
   const importAll = (requireContext) =>
     requireContext.keys().map(requireContext);
   const SImages = importAll(
@@ -23,7 +23,6 @@ const Page8 = () => {
   );
   return (
     <div>
-
       {Story && (
         <StoriesPost
           BackgroundPoster={PriyajRushali}

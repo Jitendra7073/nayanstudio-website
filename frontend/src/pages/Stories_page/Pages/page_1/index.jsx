@@ -1,11 +1,12 @@
 import React from "react";
-import "react-lazy-load-image-component/src/effects/blur.css"; 
+import "react-lazy-load-image-component/src/effects/blur.css";
 import StoriesPost from "../../Components/Story_design";
-import storiesData from "../data.json"; 
-import { BhagyeshKhevana } from "../../../../assets/images/Stories_page";
+import storiesData from "../data.json";
 import "../pages_comman.css";
 
 const Page1 = () => {
+  const BhagyeshKhevana =
+    "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998030/poster_1_ummuzq.jpg";
   const importAll = (requireContext) =>
     requireContext.keys().map(requireContext);
   const jaishalmerImages = importAll(
@@ -25,12 +26,12 @@ const Page1 = () => {
     <div>
       {firstStory && (
         <StoriesPost
-          BackgroundPoster={BhagyeshKhevana} 
+          BackgroundPoster={BhagyeshKhevana}
           ImageHeading={firstStory.Header}
           ImageSubHeading="[ Jaishalmer ]"
           Header={firstStory.Header}
           StoryDate={firstStory.StoryDate}
-          content={firstStory.content} 
+          content={firstStory.content}
           Redirection={firstStory.Redirection}
         />
       )}

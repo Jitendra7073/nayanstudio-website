@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./About_page.css";
-import AboutImage from "../../assets/images/About_page/011.jpg";
 
 const About = () => {
   // change top title
@@ -47,7 +46,7 @@ const About = () => {
             <div className="About_image_container">
               <div className="About_image_container_img">
                 <img
-                  src={AboutImage}
+                  src="https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998386/011_11zon_uaa3hw.jpg"
                   alt="Naman Verma"
                   className="About_profile_image"
                 />

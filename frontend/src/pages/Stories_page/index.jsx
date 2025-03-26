@@ -1,17 +1,22 @@
 import React, { useEffect } from "react";
 import StoriesPost from "./Components/Story_design";
-import {
-  BhagyeshKhevana,
-  LancyPavan,
-  BhramasiniSwetanshu,
-  VishalShreya,
-  YeshaBhargesh,
-  PriyajRushali,
-} from "../../assets/images/Stories_page";
+
 import { Link } from "react-router-dom";
 import "./Stories_page.css";
 
 const Stories = () => {
+  const BhagyeshKhevana =
+    "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998030/poster_1_ummuzq.jpg";
+  const LancyPavan =
+    "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998031/poster_2_roxkzn.jpg";
+  const BhramasiniSwetanshu =
+    "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998031/poster_3_pyggom.jpg";
+  const VishalShreya =
+    "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998029/poster_4_jo6fzu.jpg";
+  const YeshaBhargesh =
+    "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998030/poster_5_jdc69k.jpg";
+  const PriyajRushali =
+    "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998030/poster_6_npu2xc.jpg";
   useEffect(() => {
     document.title = "Stories | Nayan Studio";
   }, []);
@@ -32,21 +37,7 @@ const Stories = () => {
         "Lancy and Pavan's love blossomed beautifully from an arranged marriage, where two strangers grew into soulmates. Their relationship was nurtured through conversations, shared values, and a deep connection that developed naturally. Their wedding was a heartfelt celebration, reflecting their journey together—simple yet full of life. The vibrant decorations and joyous atmosphere mirrored their love, which flourished as they discovered the beauty of being with someone who complements them perfectly. Lancy and Pavan’s bond is a true testament to how love can be a journey of discovery, filled with harmony, respect, and lasting happiness.",
       Redirection: "./Lancy&Pavan",
     },
-    // {
-    //   BackgroundPoster: "",
-    //   Header: "Stephanie & Soumyadeep [ Goa ]",
-    //   StoryDate: "September 22, 2024",
-    //   content: "poster 3 with dummy details",
-    //   Redirection: "./Stephanie&Soumyadeep",
-    // },
-    // {
-    //   BackgroundPoster: "",
-    //   Header: "Yash & Shraddha [ Stephanie & Soumyadeep ]",
-    //   StoryDate: "December 12, 2024",
-    //   content:
-    //     "",
-    //   Redirection: "./Yash&Shraddha",
-    // },
+    
     {
       BackgroundPoster: VishalShreya,
       Header: "Vishal & Shreya (Arrange Marriage)",
@@ -96,7 +87,9 @@ const Stories = () => {
         );
       })}
       <Link to="/videos">
-        <div className="pre-wedding-redirection">View All Pre Wedding Shoot</div>
+        <div className="pre-wedding-redirection">
+          View All Pre Wedding Shoot
+        </div>
       </Link>
     </div>
   );

@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Gallery_Format.css";
 import Slider from "../../../components/Grid_image_Slider";
 import PropTypes from "prop-types";
 import ShareLike from "../../../components/ShareLike";
 
+// Function to preload images
+const preloadImages = (imageUrls) => {
+  imageUrls.forEach((url) => {
+    const img = new Image();
+    img.src = url;
+  });
+};
+
 const GalleryFormat = ({ heading, date, content, sliderImages, venue }) => {
+  useEffect(() => {
+    preloadImages(sliderImages);
+  }, [sliderImages]); // Preload images only once when component mounts
+
   return (
     <section className="post-section">
       <div className="post-view">

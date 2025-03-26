@@ -10,8 +10,6 @@ import {
   Testimonial,
   Page1,
   Page2,
-  Page3,
-  Page4,
   Page5,
   Page6,
   Page7,
@@ -64,14 +62,6 @@ function App() {
               <Route
                 path="/stories/Lancy&Pavan"
                 element={<Page2 />}
-              />
-              <Route
-                path="/stories/Stephanie&Soumyadeep"
-                element={<Page3 />}
-              />
-              <Route
-                path="/stories/Yash&Shraddha"
-                element={<Page4 />}
               />
               <Route
                 path="/stories/Yasha&Bhargesh"

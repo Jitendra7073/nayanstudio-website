@@ -1,10 +1,8 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
-import "./gridImageSlider.css"; // Add minimal styles here
+import "./gridImageSlider.css";
 
 // Custom Arrow Component
 const CustomArrow = ({ onClick, direction }) => (
@@ -22,7 +20,23 @@ const CustomArrow = ({ onClick, direction }) => (
 );
 
 const GridSlider = ({ Images }) => {
-  // Memoize settings for performance
+  const [loadedImages, setLoadedImages] = useState([]);
+
+  useEffect(() => {
+    // Preload all images
+    let loaded = [];
+    Images.forEach((image, index) => {
+      const img = new Image();
+      img.src = image;
+      img.onload = () => {
+        loaded.push(image);
+        if (loaded.length === Images.length) {
+          setLoadedImages([...loaded]);
+        }
+      };
+    });
+  }, [Images]);
+
   const settings = useMemo(
     () => ({
       dots: false,
@@ -52,19 +66,13 @@ const GridSlider = ({ Images }) => {
     []
   );
 
-  // Render fallback if no images
   if (!Images || Images.length === 0) return <p>No images to display</p>;
 
   return (
     <Slider {...settings} className="grid-images-slider">
-      {Images.map((image, index) => (
+      {loadedImages.map((image, index) => (
         <div key={index} className="slider-item">
-          <LazyLoadImage
-            src={image}
-            alt={`Slide ${index + 1}`}
-            effect="blur"
-            loading="lazy"
-          />
+          <img src={image} alt={`Slide ${index + 1}`} />
         </div>
       ))}
     </Slider>

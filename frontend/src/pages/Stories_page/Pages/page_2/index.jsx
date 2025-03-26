@@ -1,13 +1,12 @@
 import React from "react";
-import Footer from "../../../../components/footer";
 import StoriesPost from "../../Components/Story_design";
-import { LancyPavan } from "../../../../assets/images/Stories_page";
 import "../pages_comman.css";
-import storiesData from "../data.json"; 
-// import { LazyLoadImage } from "react-lazy-load-image-component";
+import storiesData from "../data.json";
 import "react-lazy-load-image-component/src/effects/blur.css"; // Include blur effect styles
 
 const Page2 = () => {
+  const LancyPavan =
+    "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998031/poster_2_roxkzn.jpg";
   const importAll = (requireContext) =>
     requireContext.keys().map(requireContext);
   const kashmirImages = importAll(
@@ -26,12 +25,12 @@ const Page2 = () => {
     <div>
       {secondStory && (
         <StoriesPost
-          BackgroundPoster={LancyPavan} 
+          BackgroundPoster={LancyPavan}
           ImageHeading={secondStory.Header}
           ImageSubHeading="[ Kashmir ]"
           Header={secondStory.Header}
           StoryDate={secondStory.StoryDate}
-          content={secondStory.content} 
+          content={secondStory.content}
           Redirection={secondStory.Redirection}
         />
       )}
