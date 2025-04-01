@@ -2,7 +2,6 @@ const express = require("express");
 const http = require("http");
 const { Server } = require("socket.io");
 const cors = require("cors");
-const path = require("path");
 const connectDB = require("./db");
 const mailRoutes = require("./routes/mailRoutes");
 const postRoutes = require("./routes/postRoutes");
@@ -12,7 +11,7 @@ const server = http.createServer(app); // Create HTTP server
 const io = new Server(server, {
   // Initialize Socket.IO
   cors: {
-    origin: ["http://localhost:3001", "https://nayan-studio.onrender.com"], // Allow both Render & local development
+    origin: ["https://nayanstudio.onrender.com", "http://localhost:3000"], // Allow both Render & local development
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -26,7 +25,7 @@ connectDB();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:3001", "https://nayan-studio.onrender.com"], // Allow both Render & local development
+    origin: ["https://nayanstudio.onrender.com", "http://localhost:3000"], // Allow both Render & local development
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -35,13 +34,6 @@ app.use(
 // API Routes
 app.use("/api/inquiry", mailRoutes);
 app.use("/api/posts", postRoutes);
-
-// Serve React frontend (Fixes "Not Found" issue on reload)
-app.use(express.static(path.join(__dirname, "client", "build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
 
 let likeCounts = {}; // Store like counts
 
