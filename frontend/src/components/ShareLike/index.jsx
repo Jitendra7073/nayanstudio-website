@@ -10,7 +10,8 @@ const ShareLike = ({ heading, content, likeFrom }) => {
   const [likeCount, setLikeCount] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const BASE_URL = "http://localhost:5000";
+  // const BASE_URL = "http://localhost:5000";
+  const BASE_URL = "https://ns-kfr5.onrender.com";
   const socketRef = useRef(null);
 
   useEffect(() => {
