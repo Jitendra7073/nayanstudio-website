@@ -33,6 +33,28 @@ iframe {
   margin: 30px 0;
 }
 
+.more-videos-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+.button-design{
+  background-color: #ffcc00;
+  color: #000;
+  width: 200px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.button-design:hover {
+  background-color: #e6b800;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 .center-video-content {
   width: 60%;
   margin: 30px 0;

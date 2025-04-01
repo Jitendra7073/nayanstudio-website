@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { FaTwitter, FaWhatsapp, FaFacebook } from "react-icons/fa";
-// share and like component style
 import "./Share-Like-style.css";
 
 const ShareLike = ({ heading, content, likeFrom }) => {
@@ -11,30 +10,24 @@ const ShareLike = ({ heading, content, likeFrom }) => {
   const [likeCount, setLikeCount] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  // const BASE_URL = "http://localhost:5000"; // Replace with your backend URL
-  const BASE_URL = "https://nayanstudio-backend.onrender.com"; // Replace with your backend URL
-
-  // Socket.IO connection
-  const socket = io(BASE_URL);
+  const BASE_URL = "http://localhost:5000";
+  const socketRef = useRef(null);
 
   useEffect(() => {
+    socketRef.current = io(BASE_URL);
+
     const fetchLikeCount = async () => {
       try {
         const storedLikes = localStorage.getItem("likedPosts") || "{}";
         const likedPosts = JSON.parse(storedLikes);
-
         if (likedPosts[heading]) {
-          setIsLiked(true); // User has already liked this post
+          setIsLiked(true); // Set isLiked if the post is already liked
         }
-
-        // Fetch like count from the server
         const response = await axios.post(`${BASE_URL}/api/posts/like`, {
           heading,
           action: "fetch",
           likeFrom,
         });
-
         setLikeCount(response.data.likeCount);
       } catch (error) {
         console.error("Error fetching like count:", error);
@@ -43,42 +36,41 @@ const ShareLike = ({ heading, content, likeFrom }) => {
 
     fetchLikeCount();
 
-    // Listen for real-time updates from the server
-    socket.on("likeUpdated", (data) => {
+    socketRef.current.on("likeUpdated", (data) => {
       if (data.heading === heading) {
         setLikeCount(data.likeCount);
       }
     });
 
-    // Cleanup socket on component unmount
     return () => {
-      socket.disconnect();
+      if (socketRef.current) {
+        socketRef.current.disconnect();
+      }
     };
-  }, [heading, likeFrom, socket]);
+  }, [heading, likeFrom]);
 
   const handleLike = async () => {
     if (isLiked) return; // Prevent multiple likes
-
     try {
       const response = await axios.post(`${BASE_URL}/api/posts/like`, {
         heading,
         action: "like",
         likeFrom,
       });
-
       setLikeCount(response.data.likeCount);
       setIsLiked(true);
-
-      // Store in localStorage to prevent multiple likes
       const storedLikes = localStorage.getItem("likedPosts") || "{}";
       const likedPosts = JSON.parse(storedLikes);
       likedPosts[heading] = true;
       localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
-
       setIsAnimating(true);
       setTimeout(() => setIsAnimating(false), 500);
     } catch (error) {
-      console.error("Error liking post:", error);
+      if (error.response && error.response.status === 400) {
+        console.error("User has already liked this post");
+      } else {
+        console.error("Error liking post:", error);
+      }
     }
   };
 
@@ -95,7 +87,6 @@ const ShareLike = ({ heading, content, likeFrom }) => {
       \n
       Shared by: NayanStudio
     `;
-
     if (platform === "twitter") {
       const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
         message
@@ -143,11 +134,10 @@ const ShareLike = ({ heading, content, likeFrom }) => {
           )}
         </div>
       </div>
-
       <div
         className={`like ${isAnimating ? "like-animating" : ""}`}
         onClick={handleLike}
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer", color: isLiked ? "red" : "inherit" }} // Ensure color changes to red when liked
       >
         <div className="like-icon">
           {isLiked ? <FcLike /> : <FcLikePlaceholder />}

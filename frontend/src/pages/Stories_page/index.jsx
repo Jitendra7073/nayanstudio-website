@@ -37,7 +37,7 @@ const Stories = () => {
         "Lancy and Pavan's love blossomed beautifully from an arranged marriage, where two strangers grew into soulmates. Their relationship was nurtured through conversations, shared values, and a deep connection that developed naturally. Their wedding was a heartfelt celebration, reflecting their journey together—simple yet full of life. The vibrant decorations and joyous atmosphere mirrored their love, which flourished as they discovered the beauty of being with someone who complements them perfectly. Lancy and Pavan’s bond is a true testament to how love can be a journey of discovery, filled with harmony, respect, and lasting happiness.",
       Redirection: "./Lancy&Pavan",
     },
-    
+
     {
       BackgroundPoster: VishalShreya,
       Header: "Vishal & Shreya (Arrange Marriage)",
@@ -87,9 +87,7 @@ const Stories = () => {
         );
       })}
       <Link to="/videos">
-        <div className="pre-wedding-redirection">
-          View All Pre Wedding Shoot
-        </div>
+        <div className="pre-wedding-redirection">View more videos</div>
       </Link>
     </div>
   );

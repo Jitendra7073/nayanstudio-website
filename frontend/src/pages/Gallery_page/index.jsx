@@ -3,7 +3,6 @@ import SampleView from "./Gallery_Format"; // Component to display each post
 // import css
 import "./Gallery_page.css";
 
-
 const jaishalmerImages = [
   "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998122/j3_zvzgou.webp",
   "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998118/j1_ovlyv3.webp",
@@ -27,13 +26,6 @@ const stephanieSoumyadeepImages = [
   "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998191/005_1_11zon_a6zawy.webp",
   "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998186/012_4_11zon_sepch1.webp",
   "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742997690/slide1.1_jdue9w.webp",
-];
-
-const yeshaBhargeshImages = [
-  "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742997682/slide1.2_kavod3.webp",
-  "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998207/122_5_11zon_z35pe2.webp",
-  "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998209/066_3_11zon_jkqoub.webp",
-  "https://res.cloudinary.com/dr2izxsrr/image/upload/v1742998213/152_5_11zon_agcphh.webp",
 ];
 
 const Index = () => {
@@ -75,14 +67,8 @@ const Index = () => {
       sliderImages: stephanieSoumyadeepImages,
       venue: "Not Given",
     },
-    {
-      heading: "Yesha & Bhargesh",
-      date: "January 10, 2025",
-      content:
-        "Yesha and Bhargesh's marriage began with a foundation of respect and understanding, but it quickly grew into something far deeper. Their journey together was one of discovery, where they found strength in each other’s presence and trust in the relationship they were building. Their wedding, a blend of tradition and elegance, was a reflection of their evolving bond. Surrounded by loved ones, the ceremony was a celebration not just of their union but of the partnership they had formed, full of promise and shared dreams. Yesha and Bhargesh’s story is a reminder that true love can emerge from the most unexpected beginnings, growing stronger over time.",
-      sliderImages: yeshaBhargeshImages,
-      venue: "Not Given",
-    },
+    
+    
   ];
 
   return (
@@ -92,7 +78,7 @@ const Index = () => {
           <SampleView
             key={index}
             heading={post.heading}
-            date={post.date}
+            // date={post.date} 
             sliderImages={post.sliderImages}
           />
         ))}

@@ -60,17 +60,17 @@ const Home = () => {
   const HomeCards = [
     {
       img: Bhageyakhevana,
-      to: "./stories/2024-10-17-Bhagyesh&Khevana",
+      to: "./stories/Bhagyesh&Khevana",
       details: "Bhagyesh & Khevana // Jaisalmer //",
     },
     {
       img: StephanieSoumyadeep,
-      to: "./stories/2024-09-22-Stephanie&Soumyadeep",
+      to: "./stories/Yasha&Bhargesh",
       details: "Bhargesh & Yesha // Goa //",
     },
     {
       img: LancyPavan,
-      to: "./stories/2024-11-05-Lancy&Pavan",
+      to: "./stories/Lancy&Pavan",
       details: "Lancy & Pavan // Kashmir //",
     },
   ];
@@ -118,7 +118,7 @@ const Home = () => {
             <div className="cards">
               {HomeCards.map((card, index) => (
                 <div className="card" key={index}>
-                  <Link to={card.to}>
+                  <Link to={card.to} target="_blank">
                     <img src={card.img} alt="Images Not Found" />
                   </Link>
                   <div className="short_details_of_card">
