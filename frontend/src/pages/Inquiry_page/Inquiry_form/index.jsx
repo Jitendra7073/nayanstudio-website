@@ -5,8 +5,8 @@ import "./inquiry_form_style.css"; // Style remains unchanged
 import { ToastContainer, toast } from "react-toastify"; // Import Toastify
 import "react-toastify/dist/ReactToastify.css"; // Toastify CSS
 
-const BASE_URL = "http://localhost:5000";
-// const BASE_URL = "https://nayanstudio-backend.onrender.com";
+// const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://ns-kfr5.onrender.com";
 
 const Index = () => {
   const formik = useFormik({
