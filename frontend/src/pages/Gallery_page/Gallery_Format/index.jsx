@@ -23,7 +23,6 @@ const GalleryFormat = ({ heading, date, content, sliderImages, venue }) => {
         <div className="post-header">
           <div className="post-header-heading">
             <h1>{heading}</h1>
-            <p>{date}</p>
           </div>
         </div>
         <div className="post-content">
@@ -32,9 +31,7 @@ const GalleryFormat = ({ heading, date, content, sliderImages, venue }) => {
         <div className="post-slider">
           <Slider Images={sliderImages} />
         </div>
-        {/* <div className="post-venue">
-          <p><strong>Venue:</strong> {venue}</p>
-        </div> */}
+        
         <div className="post-ShareLike">
           <ShareLike heading={heading} content={content} likeFrom="Galleries" />
         </div>
@@ -45,10 +42,7 @@ const GalleryFormat = ({ heading, date, content, sliderImages, venue }) => {
 
 GalleryFormat.propTypes = {
   heading: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
   sliderImages: PropTypes.arrayOf(PropTypes.string).isRequired,
-  // venue: PropTypes.string.isRequired,
 };
 
 export default GalleryFormat;

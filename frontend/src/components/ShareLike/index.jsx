@@ -14,7 +14,7 @@ const ShareLike = ({ heading, content, likeFrom }) => {
 
   // const BASE_URL = "http://localhost:5000";
   const BASE_URL = "https://ns-kfr5.onrender.com";
-  
+
   const socketRef = useRef(null);
 
   useEffect(() => {
