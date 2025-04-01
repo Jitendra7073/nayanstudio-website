@@ -1,17 +1,22 @@
+.view_more_button{
+    display: flex;
+    justify-content: right;
+}
 .pre-wedding-redirection{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ee972b;
+    border: 2px solid #ee972b;
     height: 40px;
     color: black;
     font-weight: 500;
     text-transform:capitalize;
     transition: all 0.1s ease;
     border-radius: 5px;
+    padding: 0 20px;
 }
 .pre-wedding-redirection:hover{
-    background-color: #d57e15;
+    background-color: #ee972b;
 }
 a{
     text-decoration: none;

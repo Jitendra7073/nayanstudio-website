@@ -86,9 +86,11 @@ const Stories = () => {
           />
         );
       })}
-      <Link to="/videos">
-        <div className="pre-wedding-redirection">View more videos</div>
-      </Link>
+      <div className="view_more_button">
+        <Link to="/videos">
+          <div className="pre-wedding-redirection">View more videos</div>
+        </Link>
+      </div>
     </div>
   );
 };

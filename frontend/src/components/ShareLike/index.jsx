@@ -3,6 +3,7 @@ import axios from "axios";
 import { io } from "socket.io-client";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { FaTwitter, FaWhatsapp, FaFacebook } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa"; // Import red heart icon
 import "./Share-Like-style.css";
 
 const ShareLike = ({ heading, content, likeFrom }) => {
@@ -10,7 +11,10 @@ const ShareLike = ({ heading, content, likeFrom }) => {
   const [likeCount, setLikeCount] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const BASE_URL = "http://localhost:5000";
+
+  // const BASE_URL = "http://localhost:5000";
+  const BASE_URL = "https://ns-kfr5.onrender.com";
+  
   const socketRef = useRef(null);
 
   useEffect(() => {
@@ -18,6 +22,7 @@ const ShareLike = ({ heading, content, likeFrom }) => {
 
     const fetchLikeCount = async () => {
       try {
+        // what is do ?
         const storedLikes = localStorage.getItem("likedPosts") || "{}";
         const likedPosts = JSON.parse(storedLikes);
         if (likedPosts[heading]) {
@@ -57,6 +62,8 @@ const ShareLike = ({ heading, content, likeFrom }) => {
         action: "like",
         likeFrom,
       });
+      // what this code do ?
+
       setLikeCount(response.data.likeCount);
       setIsLiked(true);
       const storedLikes = localStorage.getItem("likedPosts") || "{}";
@@ -137,10 +144,10 @@ const ShareLike = ({ heading, content, likeFrom }) => {
       <div
         className={`like ${isAnimating ? "like-animating" : ""}`}
         onClick={handleLike}
-        style={{ cursor: "pointer", color: isLiked ? "red" : "inherit" }} // Ensure color changes to red when liked
+        style={{ cursor: isLiked ? "none" : "pointer" }} // Removed redundant color setting
       >
         <div className="like-icon">
-          {isLiked ? <FcLike /> : <FcLikePlaceholder />}
+          <FaHeart style={{ color: isLiked ? "red" : "#FFCCCB" }} />
         </div>
         <div className="like-text">
           <p>{likeCount} Likes</p>

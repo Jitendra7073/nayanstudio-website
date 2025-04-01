@@ -48,7 +48,7 @@ GalleryFormat.propTypes = {
   date: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   sliderImages: PropTypes.arrayOf(PropTypes.string).isRequired,
-  venue: PropTypes.string.isRequired,
+  // venue: PropTypes.string.isRequired,
 };
 
 export default GalleryFormat;
