@@ -11,7 +11,7 @@ const server = http.createServer(app); // Create HTTP server
 const io = new Server(server, {
   // Initialize Socket.IO
   cors: {
-    origin: ["https://nayanstudio.netlify.app", "http://localhost:3000"], // Allow both Render & local development
+    origin: ["https://nayanstudio.co.in", "http://localhost:3000"], // Allow both Render & local development
     methods: ["GET", "POST"],
     credentials: true,
   },
@@ -25,7 +25,7 @@ connectDB();
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://nayanstudio.netlify.app", "http://localhost:3000"], // Allow both Render & local development
+    origin: ["https://nayanstudio.co.in", "http://localhost:3000"], // Allow both Render & local development
     methods: ["GET", "POST"],
     credentials: true,
   })
