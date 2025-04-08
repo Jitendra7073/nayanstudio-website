@@ -18,7 +18,7 @@ const Welcome = ({ action }) => {
       }, 700);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   return (
     <div
