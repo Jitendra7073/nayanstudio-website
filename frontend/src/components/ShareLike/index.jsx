@@ -54,22 +54,31 @@ const ShareLike = ({ heading, content, likeFrom }) => {
     };
   }, [heading, likeFrom]);
 
+
   const handleLike = async () => {
-    if (isLiked) return; // Prevent multiple likes
+    const storedLikes = JSON.parse(localStorage.getItem("likedPosts") || "{}");
+    const lastLikedTime = storedLikes[heading]?.timestamp || 0;
+    const currentTime = Date.now();
+    const hoursPassed = (currentTime - lastLikedTime) / (1000 * 60 * 60);
+
+    if (hoursPassed < 24) {
+      console.warn("You can like this post again after 24 hours.");
+      return;
+    }
+
     try {
       const response = await axios.post(`${BASE_URL}/api/posts/like`, {
         heading,
         action: "like",
-        likeFrom,
+      
       });
-      // what this code do ?
 
       setLikeCount(response.data.likeCount);
       setIsLiked(true);
-      const storedLikes = localStorage.getItem("likedPosts") || "{}";
-      const likedPosts = JSON.parse(storedLikes);
-      likedPosts[heading] = true;
-      localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
+
+      storedLikes[heading] = { liked: true, timestamp: currentTime };
+      localStorage.setItem("likedPosts", JSON.stringify(storedLikes));
+
       setIsAnimating(true);
       setTimeout(() => setIsAnimating(false), 500);
     } catch (error) {
