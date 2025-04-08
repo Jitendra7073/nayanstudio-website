@@ -1,8 +1,5 @@
 import React from "react";
 import Slider from "react-slick";
-// icons
-import { MdNavigateNext } from "react-icons/md";
-import { GrFormPrevious } from "react-icons/gr";
 // css
 import "./Image_slider.css";
 

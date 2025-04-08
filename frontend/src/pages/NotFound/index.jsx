@@ -7,7 +7,7 @@ const index = () => {
     <div className="NotFound_Full_page">
       <Link to="/">
         <div className="Page_Farmat">
-          <img src={NotFound} />
+          <img src={NotFound} alt="Page Not Found" />
         </div>
       </Link>
     </div>

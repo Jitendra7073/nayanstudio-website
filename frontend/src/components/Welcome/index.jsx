@@ -11,12 +11,12 @@ const Welcome = ({ action }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setFade(true); // Trigger fade-out effect
+      setFade(true);
       setTimeout(() => {
         setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-        setFade(false); // Trigger fade-in effect
-      }, 700); // Match the duration of the CSS transition
-    }, 4000); // Change image every 4 seconds
+        setFade(false);
+      }, 700);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -28,7 +28,7 @@ const Welcome = ({ action }) => {
       }}
     >
       <div className="content">
-        <img src={Logo} alt="Logo" className="Welcome-logo" />
+        <img src={Logo} alt="Logo" className="Welcome-logo" loading="lazy" />
         <button className="enter-button" onClick={action}>
           Enter
         </button>

@@ -42,7 +42,7 @@ const Page1 = () => {
             <div className="gallery_image_div" key={index}>
               <img
                 src={photos}
-                alt="Image not found"
+                alt="not found"
                 className="gallery_image"
                 loading="lazy"
               />

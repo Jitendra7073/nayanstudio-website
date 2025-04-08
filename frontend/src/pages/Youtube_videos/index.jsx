@@ -43,6 +43,7 @@ const YouTubeGrid = () => {
           <a
             href="https://www.youtube.com/@NayanStudio"
             target="_blank"
+            rel="noreferrer"
             className="youtube-channel"
           >
             <img src={YouTube_Link} alt="Youtube Channel" />
